@@ -1,19 +1,29 @@
+const Hello = (props) => {
 
-function App() {
-  console.log('-----from main component!');
-  const hoje = new Date();
-  const a = 10;
-  const b = 20;
-  console.log("-------"+ hoje, a+b);
+  console.log(props)
+  return (
+    <div>
+      <p>
+
+        Olá {props.nome}, você tem {props.idade} anos
+      </p>
+    </div>
+  )
+}
+
+const App = () => {
+
+  const nome = 'Peter'
+  const idade = 10
 
   return (
-    <div className="App">
-        <p>Hello world!</p>
-    
-        <p>Today {hoje.toString()}</p>
-        <p>{a} + {b} = {a + b}</p>
+    <div>
+      <h1>Olá a todos!</h1>
+
+      <Hello nome='Maya' idade={26 + 10} />
+      <Hello nome={nome} idade={idade} />
     </div>
-  );
+  )
 }
 
 export default App;
