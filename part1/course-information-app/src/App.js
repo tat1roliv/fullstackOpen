@@ -1,32 +1,34 @@
 const App = () => {
   const course = 'Desenvolvimento de aplicação Half Stack'
-  const part1 = {
-    name: 'Fundamentos da biblioteca React',
-    exercises: 10
-  }
-  const part2 = {
-    name: 'Usando props para passar dados',
-    exercises: 7
-  }
-  const part3 = {
-    name: 'Estado de um componente',
-    exercises: 14
-  }
+  const parts = [
+    {
+      name: 'Fundamentos da biblioteca React',
+      exercises: 10
+    },
+    {
+      name: 'Usando props para passar dados',
+      exercises: 7
+    },
+    {
+      name: 'Estado de um componente',
+      exercises: 14
+    }
+  ]
 
   return (
     <div>
       <h1>{course}</h1>
       <p>
-        {part1.name} - {part1.exercises}
+        {parts[0].name} - {parts[0].exercises}
       </p>
       <p>
-        {part2.name} - {part2.exercises}
+      {parts[1].name} - {parts[1].exercises}
       </p>
       <p>
-        {part3.name} - {part3.exercises}
+      {parts[2].name} - {parts[2].exercises}
       </p>
       <p>
-        Número total de exercícios: {part1.exercises + part2.exercises + part3.exercises}
+        Número total de exercícios: {parts[0].exercises + parts[1].exercises + parts[2].exercises}
       </p>
     </div>
   )
