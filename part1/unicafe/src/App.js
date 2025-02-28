@@ -19,15 +19,14 @@ const AveragePositiveFeedback = (good, neutral, bad) => {
   return good / TotalFeedbackColected(good, neutral, bad) * 100;  
 }
 
-// lugar adequado para definir um componente
 const Statistics = (props) => {
   const allClicks = props.good + props.neutral + props.bad;
   if(allClicks !== 0){
     return (
       <div>
-          <p>Good {props.good}</p>
-          <p>Neutral {props.neutral}</p>
-          <p>Bad {props.bad}</p>
+          <StatisticLine text='good' value={props.good} />
+          <StatisticLine text='neutral' value={props.neutral} />
+          <StatisticLine text='bad' value={props.bad} />
 
           <p>All {TotalFeedbackColected(props.good, props.neutral, props.bad)}</p>
           <p>Average {AverageFeedback(props.good, props.neutral, props.bad)}</p>
@@ -41,6 +40,15 @@ const Statistics = (props) => {
       </div>
     )
   }
+}
+
+const StatisticLine = (props) => {
+  return (
+    <tr>
+      <td>{props.text}</td> 
+      <td>{props.value}</td>
+    </tr>
+  )
 }
 
 
