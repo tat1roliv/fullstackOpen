@@ -7,6 +7,17 @@ const Button = (props) => (
 )
 
 
+const TotalFeedbackColected = (good, neutral, bad) => {
+  return good + neutral + bad ;
+}
+
+const AverageFeedback = (good, neutral, bad) => {
+  return (good - bad) / TotalFeedbackColected(good, neutral, bad);
+}
+
+const AveragePositiveFeedback = (good, neutral, bad) => {
+  return good / TotalFeedbackColected(good, neutral, bad) * 100;  
+}
 
 
 const App = () => {
@@ -27,6 +38,10 @@ const App = () => {
       <p>Good {good}</p>
       <p>Neutral {neutral}</p>
       <p>Bad {bad}</p>
+
+      <p>All {TotalFeedbackColected(good, neutral, bad)}</p>
+      <p>Average {AverageFeedback(good, neutral, bad)}</p>
+      <p>Average Positive feedback {AveragePositiveFeedback(good, neutral, bad)} %</p>
     </div>
   )
 }
