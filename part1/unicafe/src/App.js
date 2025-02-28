@@ -34,6 +34,12 @@ const Statistics = (props) => {
           <p>Average Positive feedback {AveragePositiveFeedback(props.good, props.neutral, props.bad)} %</p>
       </div>
     )
+  } else {
+    return (
+      <div>
+        <p>No feedback given</p>
+      </div>
+    )
   }
 }
 
